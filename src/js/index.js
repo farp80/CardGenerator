@@ -7,10 +7,23 @@ import "../assets/img/4geeks.ico";
 import "../style/index.scss";
 
 window.onload = function() {
-  let suit = suits()[selectSuit()];
-  //   let card = cardsNumbers()[selectCard()];
-  let center = document.querySelector("#center");
-  center.innerHTML = suit;
+  let suitIdx = selectSuit();
+  let selectedSuit = suits();
+  let suit = selectedSuit[suitIdx];
+  let topLeft = document.querySelector("#topLeft");
+  topLeft.innerHTML = suit;
+
+  let bottomRight = document.querySelector("#bottomRight");
+  bottomRight.innerHTML = suit;
+
+  if (suit === "&hearts;" || suit === "&diams;") {
+    topLeft.style.color = "red";
+    bottomRight.style.color = "red";
+  }
+
+  let card = cardsNumbers()[selectCard()];
+  let middle = document.querySelector("#middle");
+  middle.innerHTML = card;
 };
 
 let selectSuit = () => {
