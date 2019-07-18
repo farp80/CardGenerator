@@ -14,6 +14,8 @@ body {
   left: 0;
   right: 0;
   margin: auto;
+  font-size: 8em;
+  border-radius: 15px;
 }
 /*
     You can write your own styles here...
@@ -36,7 +38,28 @@ body {
   color: red;
 }
 
-.cardNumber {
-  font-size: 20em;
-  color: black;
+.cardHeart::before {
+  color: red !important;
+  margin: 0em !important;
+  padding: 0em !important;
+  top: 0em !important;
+  position: relative !important;
+}
+
+.cardHeart::after {
+  color: yellow !important;
+  margin: 20em !important;
+  padding: 20em !important;
+  top: 20em !important;
+  position: relative !important;
+}
+
+.cardSpade {
+}
+
+.cardDiamond {
+  color: red !important;
+}
+
+.cardClub {
 }

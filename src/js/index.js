@@ -8,10 +8,9 @@ import "../style/index.scss";
 
 window.onload = function() {
   let suit = suits()[selectSuit()];
-  let card = cardsNumbers()[selectCard()];
-
+  //   let card = cardsNumbers()[selectCard()];
   let center = document.querySelector("#center");
-  center.innerHTML = card;
+  center.innerHTML = suit;
 };
 
 let selectSuit = () => {
