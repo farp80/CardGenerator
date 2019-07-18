@@ -7,37 +7,32 @@ import "../assets/img/4geeks.ico";
 import "../style/index.scss";
 
 window.onload = function() {
-  let suitIdx = selectSuit();
-  let selectedSuit = suits();
-  let suit = selectedSuit[suitIdx];
+  let selectedSuit = suit();
   let topLeft = document.querySelector("#topLeft");
-  topLeft.innerHTML = suit;
+  topLeft.innerHTML = selectedSuit;
 
   let bottomRight = document.querySelector("#bottomRight");
-  bottomRight.innerHTML = suit;
+  bottomRight.innerHTML = selectedSuit;
 
-  if (suit === "&hearts;" || suit === "&diams;") {
+  if (selectedSuit === "&hearts;" || selectedSuit === "&diams;") {
     topLeft.style.color = "red";
     bottomRight.style.color = "red";
   }
 
-  let card = cardsNumbers()[selectCard()];
   let middle = document.querySelector("#middle");
-  middle.innerHTML = card;
+  middle.innerHTML = card();
 };
 
-let selectSuit = () => {
-  return Math.floor(Math.random() * 4);
+let card = () => {
+  let randomCard = Math.floor(Math.random() * 13);
+  let possibleCards = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+
+  return possibleCards[randomCard];
 };
 
-let selectCard = () => {
-  return Math.floor(Math.random() * 13);
-};
+let suit = () => {
+  let randomSuit = Math.floor(Math.random() * 4);
+  let possibleSuits = ["&hearts;", "&clubs;", "&diams;", "&spades;"];
 
-let suits = () => {
-  return ["&hearts;", "&clubs;", "&diams;", "&spades;"];
-};
-
-let cardsNumbers = () => {
-  return [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+  return possibleSuits[randomSuit];
 };
